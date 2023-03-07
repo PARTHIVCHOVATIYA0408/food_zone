@@ -27,29 +27,35 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(
-            top: 22,
-            left: 15,
-            right: 15,
-          ),
-          child: Column(
-            children: [
-              Row(
-                children: const [
-                  Text(
+        child: ListView(
+          children: [
+            Row(
+              children: const [
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: 22,
+                    left: 15,
+                    right: 15,
+                  ),
+                  child: Text(
                     'Login',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 35,
                     ),
                   ),
-                ],
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 15,
+                right: 15,
               ),
-              const SizedBox(
-                height: 15,
-              ),
-              Row(
+              child: Row(
                 children: const [
                   Text(
                     'Sign in to your account',
@@ -60,10 +66,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 20,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 15,
+                right: 15,
               ),
-              Form(
+              child: Form(
                 key: formKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -124,86 +136,131 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      children: const [
-                        Text(
-                          'Forgot Password?',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Forgot Password?',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
-                        ),
+                        )
                       ],
-                    ),
-                    OutlinedButton(
-                      onPressed: () {
-                        formKey.currentState!.validate();
-                        if (formKey.currentState!.validate()) {
-                          formKey.currentState!.save();
-                        }
-                        // Navigator.pushAndRemoveUntil(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //       builder: (context) => const TrandingScreen(),
-                        //     ),
-                        //     (route) => false);
-                      },
-                      child: Container(
-                        height: 35,
-                        width: double.infinity,
-                        color: Colors.green,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 25,
-                    ),
-                    const Center(
-                      child: Text(
-                        '----- OR -----',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 300,
-                    ),
-                    const Center(
-                      child: Text(
-                        "Don't have a account?",
-                        style: TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                    ),
-                    const Center(
-                      child: Text(
-                        "Signup",
-                        style: TextStyle(
-                          fontSize: 19,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      height: 50,
-                      width: double.infinity,
-                      color: Colors.green,
-                      child: const Center(child: Text('Skip & Continue')),
                     ),
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 15,
+                right: 15,
+              ),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  minimumSize: const Size.fromHeight(50), // NEW
+                ),
+                onPressed: () {
+                  formKey.currentState!.validate();
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+                  }
+                },
+                child: const Text(
+                  'Login',
+                  style: TextStyle(fontSize: 24),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            const Center(
+              child: Text(
+                '----- OR -----',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    height: 45,
+                    width: 45,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 1),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Image.asset(
+                        'assets/images/Google.png',
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  Container(
+                    height: 45,
+                    width: 45,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 1),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Image.asset(
+                        'assets/images/Facebook.png',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 200,
+            ),
+            const Center(
+              child: Text(
+                "Don't have a account?",
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+            ),
+            const Center(
+              child: Text(
+                "Signup",
+                style: TextStyle(
+                  fontSize: 19,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: 50,
+              width: double.infinity,
+              color: Colors.green,
+              child: const Center(child: Text('Skip & Continue')),
+            ),
+          ],
         ),
       ),
     );

@@ -106,7 +106,6 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                       item['Categories'][index]["name"],
                       style: const TextStyle(
                         fontSize: 14,
-                        // fontWeight: FontWeight.w600,
                       ),
                     ),
                   ],
