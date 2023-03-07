@@ -10,6 +10,7 @@ class CategoriesScreen extends StatefulWidget {
 class _CategoriesScreenState extends State<CategoriesScreen> {
   @override
   Map item = {
+    //------Categories Screen All Data------------------
     "Categories": [
       {
         "image": "assets/images/Fruits1.jpg",
@@ -77,6 +78,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
           right: 10,
           top: 10,
         ),
+        //------Categories Screen All Data Pass------------------
         child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,

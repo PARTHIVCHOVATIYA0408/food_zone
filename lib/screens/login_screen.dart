@@ -85,6 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         border: OutlineInputBorder(),
                         labelText: 'Email',
                       ),
+                      //-------------- Email Validation --------------
                       validator: (value) {
                         if (value!.isEmpty) {
                           return 'Please enter your email';
@@ -102,6 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 15,
                     ),
                     TextFormField(
+                      //-------------- Password Validation --------------
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "Please enter password";
@@ -128,6 +130,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               },
                             );
                           },
+                          //---------------------Passeord Show And Hide Icons--------------------
                           icon: Icon(
                             passwordVisible
                                 ? Icons.visibility

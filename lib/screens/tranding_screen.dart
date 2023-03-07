@@ -10,9 +10,9 @@ class TrandingScreen extends StatefulWidget {
 class _TrandingScreenState extends State<TrandingScreen> {
   Map item = {
     "product": [
+      //----------Tranding Screen All Data---------
       {
         "image": "assets/images/oreo 1.jpg",
-        // "icon":"",
         "name": "Bread & Backery",
         "subtitle": "cadbury oreo origin",
         "price": "\$ 20.00",
@@ -21,7 +21,6 @@ class _TrandingScreenState extends State<TrandingScreen> {
       },
       {
         "image": "assets/images/Thums Up 1.jpg",
-        // "icon":"",
         "name": "Beverages",
         "subtitle": "Thums Up Soda",
         "price": "\$ 50.00",
@@ -30,7 +29,6 @@ class _TrandingScreenState extends State<TrandingScreen> {
       },
       {
         "image": "assets/images/Amul 1.jpg",
-        // "icon":"",
         "name": "Dairy Products",
         "subtitle": "Amul Pasteurised Buter",
         "price": "\$ 70.00",
@@ -39,7 +37,6 @@ class _TrandingScreenState extends State<TrandingScreen> {
       },
       {
         "image": "assets/images/Coconut.png",
-        // "icon":"",
         "name": "Fruits",
         "subtitle": "Tender Coconut",
         "price": "\$ 20.00",
@@ -48,7 +45,6 @@ class _TrandingScreenState extends State<TrandingScreen> {
       },
       {
         "image": "assets/images/blackberry.jpeg",
-        // "icon":"",
         "name": "BlackBerry",
         "subtitle": "cadbury oreo origin",
         "price": "\$ 20.00",
@@ -57,7 +53,6 @@ class _TrandingScreenState extends State<TrandingScreen> {
       },
       {
         "image": "assets/images/apple.jpeg",
-        // "icon":"",
         "name": "Bread & Backery",
         "subtitle": "cadbury oreo origin",
         "price": "\$ 20.00",
@@ -96,6 +91,7 @@ class _TrandingScreenState extends State<TrandingScreen> {
           right: 10,
           top: 10,
         ),
+        //---------------Tranding Screen All Data Pass--------------------
         child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
